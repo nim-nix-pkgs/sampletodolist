@@ -1,0 +1,34 @@
+{
+  description = ''Sample Todo List Application'';
+
+  inputs.flakeNimbleLib.owner = "riinr";
+  inputs.flakeNimbleLib.ref   = "master";
+  inputs.flakeNimbleLib.repo  = "nim-flakes-lib";
+  inputs.flakeNimbleLib.type  = "github";
+  inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
+  
+  inputs.src-sampleTodoList-master.flake = false;
+  inputs.src-sampleTodoList-master.owner = "momeemt";
+  inputs.src-sampleTodoList-master.ref   = "refs/heads/master";
+  inputs.src-sampleTodoList-master.repo  = "SampleTodoList";
+  inputs.src-sampleTodoList-master.type  = "github";
+  
+  inputs."cligen".dir   = "nimpkgs/c/cligen";
+  inputs."cligen".owner = "riinr";
+  inputs."cligen".ref   = "flake-pinning";
+  inputs."cligen".repo  = "flake-nimble";
+  inputs."cligen".type  = "github";
+  inputs."cligen".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."cligen".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
+  outputs = { self, nixpkgs, flakeNimbleLib, ...}@deps:
+  let 
+    lib  = flakeNimbleLib.lib;
+    args = ["self" "nixpkgs" "flakeNimbleLib" "src-sampleTodoList-master"];
+  in lib.mkRefOutput {
+    inherit self nixpkgs ;
+    src  = deps."src-sampleTodoList-master";
+    deps = builtins.removeAttrs deps args;
+    meta = builtins.fromJSON (builtins.readFile ./meta.json);
+  };
+}
