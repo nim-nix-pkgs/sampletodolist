@@ -8,8 +8,8 @@
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
   inputs.src-sampleTodoList-master.flake = false;
+  inputs.src-sampleTodoList-master.ref   = "refs/heads/master";
   inputs.src-sampleTodoList-master.owner = "momeemt";
-  inputs.src-sampleTodoList-master.ref   = "master";
   inputs.src-sampleTodoList-master.repo  = "SampleTodoList";
   inputs.src-sampleTodoList-master.type  = "github";
   
