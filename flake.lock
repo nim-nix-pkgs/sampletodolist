@@ -3,20 +3,22 @@
     "cligen": {
       "inputs": {
         "flakeNimbleLib": [
+          "sampletodolist-master",
           "flakeNimbleLib"
         ],
         "nixpkgs": [
+          "sampletodolist-master",
           "nixpkgs"
         ],
         "src-cligen-v1_5_23": "src-cligen-v1_5_23"
       },
       "locked": {
         "dir": "v1_5_23",
-        "lastModified": 1651917786,
-        "narHash": "sha256-iuuvLka4OYQfxEGWAvXG95W2qO8754zCHAVlmF/R92A=",
+        "lastModified": 1651609682,
+        "narHash": "sha256-XK66Xbvp2yNwjxuJ6pCEhE7CvTchqYMEAKHwd9gR7L4=",
         "owner": "nim-nix-pkgs",
         "repo": "cligen",
-        "rev": "7f43944b33da6bedef706460e55d07a282854090",
+        "rev": "d1db6bc462c146fb7a72cd1965da6f8fa05c3965",
         "type": "github"
       },
       "original": {
@@ -61,10 +63,37 @@
     },
     "root": {
       "inputs": {
-        "cligen": "cligen",
         "flakeNimbleLib": "flakeNimbleLib",
         "nixpkgs": "nixpkgs",
+        "sampletodolist-master": "sampletodolist-master"
+      }
+    },
+    "sampletodolist-master": {
+      "inputs": {
+        "cligen": "cligen",
+        "flakeNimbleLib": [
+          "flakeNimbleLib"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "src-sampleTodoList-master": "src-sampleTodoList-master"
+      },
+      "locked": {
+        "dir": "master",
+        "lastModified": 1651610015,
+        "narHash": "sha256-i36pw1lX5uZ8zERdaSwClPyNHySeA5HicZV/R+3T1PY=",
+        "owner": "nim-nix-pkgs",
+        "repo": "sampletodolist",
+        "rev": "7f901ea1ce2870f0eda843a0c5a7ce3e4b2716e6",
+        "type": "github"
+      },
+      "original": {
+        "dir": "master",
+        "owner": "nim-nix-pkgs",
+        "ref": "master",
+        "repo": "sampletodolist",
+        "type": "github"
       }
     },
     "src-cligen-v1_5_23": {
